@@ -6,14 +6,19 @@ export default class HomeScreen extends Component{
   constructor() {
     super();
     this.state = {
-      text: '',
+      text: "",
       isSearchPressed: false,
       isLoading: false,
       word  : "Loading...",
       lexicalCategory :'',
-      definition : ""
+      definition : ''
     };
   }
+
+  
+    url = 'https://rupinwhitehatjr.github.io/dictionary/' + searchKeyword + '.json';
+     
+    
 
   getWord=(text)=>{
     var text = text.toLowerCase()
@@ -55,7 +60,7 @@ export default class HomeScreen extends Component{
             onChangeText={text => {
               this.setState({
                 text: text,
-                isSearchPressed: false,
+                isSearchPressed: true,
                 word  : "Loading...",
                 lexicalCategory :'',
                 examples : [],
